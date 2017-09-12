@@ -44,7 +44,7 @@ class RenderHook
         $pageLayout->modTSconfig = BackendUtility::getModTSconfig($parentObject->id, 'mod.' . 'web_layout');
         $pageLayout->pageinfo = BackendUtility::readPageAccess($parentObject->id, $parentObject->perms_clause);
 
-        /** @var YoastSeoForTypo3\YoastSeo\Backend\PageLayoutHeader $yoast */
+        /** @var Clickstorm\CsSeo\Hook\PageHook $csseo */
         $csseo = GeneralUtility::makeInstance(\Clickstorm\CsSeo\Hook\PageHook::class);
         return $csseo->render($params, $pageLayout);
     }
