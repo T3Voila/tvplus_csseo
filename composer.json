@@ -1,0 +1,36 @@
+{
+    "name": "templavoilaplus/ppi_templavoilaplus_csseo",
+    "type": "typo3-cms-extension",
+    "description": "Integration of TYPO3 [clickstorm] SEO into TemplaVoilà! Plus.",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "TemplaVoila",
+        "csseo"
+    ],
+    "homepage": "https://templavoila.plus/",
+    "license": ["GPL-2.0+"],
+    "authors": [
+        {
+            "name": "Alexander Opitz",
+            "email": "opitz@pluspol-interactive.de",
+            "homepage": "http://www.pluspol-interactive.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^7.6.0 || ^8.7.0 || ^9.5.0",
+        "clickstorm/cs_seo": ">=2.1.0 <4.99.99",
+        "templavoilaplus/templavoilaplus": ">=7.1.2 <7.99.99",
+        "php": ">=5.5.0 <7.3.99"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ppi\\Templavoilaplus\\Linkvalidator\\": "Classes/"
+        }
+    },
+    "replace": {
+        "ppi_templavoilaplus_csseo": "self.version",
+        "typo3-ter/ppi_templavoilaplus_csseo": "self.version"
+    }
+}
