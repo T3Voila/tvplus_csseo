@@ -1,5 +1,5 @@
 {
-    "name": "templavoilaplus/ppi_templavoilaplus_csseo",
+    "name": "t3voila/tvplus_csseo",
     "type": "typo3-cms-extension",
     "description": "Integration of TYPO3 [clickstorm] SEO into TemplaVoilà! Plus.",
     "keywords": [
@@ -13,20 +13,19 @@
     "authors": [
         {
             "name": "Alexander Opitz",
-            "email": "opitz@pluspol-interactive.de",
-            "homepage": "http://www.pluspol-interactive.de",
+            "email": "opitz.alexander@googlemail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "typo3/cms-core": "^7.6.0 || ^8.7.0 || ^9.5.0",
-        "clickstorm/cs_seo": ">=2.1.0 <4.99.99",
-        "templavoilaplus/templavoilaplus": ">=7.1.2 <7.99.99",
-        "php": ">=5.5.0 <7.3.99"
+        "typo3/cms-core": "^8.7.0 || ^9.5.0 || ^10.4.0 || ^11.5.0",
+        "clickstorm/cs_seo": "^6.0.0 | 7.0.0",
+        "templavoilaplus/templavoilaplus": "^8.1.0",
+        "php": "^7.2"
     },
     "autoload": {
         "psr-4": {
-            "Ppi\\Templavoilaplus\\Linkvalidator\\": "Classes/"
+            "T3voila\\TvplusCsseo\\": "Classes/"
         }
     },
     "replace": {
@@ -35,7 +34,7 @@
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "ppi_templavoila_notes"
+            "extension-key": "t3voila_tvplus_csseo"
         }
     }
 }
