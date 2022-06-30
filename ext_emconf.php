@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
     'title' => 'TemplaVoilà! Plus for CS SEO',
-    'description' => 'Integration of TYPO3 [clickstorm] SEO into TemplaVoilà! Plus.',
+    'description' => 'Integration of TYPO3 [clickstorm] SEO into TemplaVoilà! Plus PageLayout Modul',
     'category' => 'misc',
     'version' => '1.0.0',
     'state' => 'stable',
