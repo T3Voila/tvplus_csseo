@@ -1,8 +1,9 @@
-TemplaVoilà! Plus for [clickstorm] SEO
-======================================
-
 [![license](https://img.shields.io/github/license/T3Voila/tvplus_csseo.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html)
-[![version](https://img.shields.io/badge/TER_version-0.2.3-green.svg)](https://typo3.org/extensions/repository/view/t3voila_tvplus_csseo)
+[![version](https://img.shields.io/badge/TER_version-1.0.0-green.svg)](https://typo3.org/extensions/repository/view/t3voila_tvplus_csseo)
+
+# TemplaVoilà! Plus for [clickstorm] SEO
+
+<img alt="ICON" align="right" width="256" height="256" src="/Resources/Public/Icons/Extension.svg">
 
 This TYPO3 extension integrates the [clickstorm] SEO Extension into the page layout module of TemplaVoilà! Plus.
 Compatible to TYPO3 v10/v11 LTS.
