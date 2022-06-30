@@ -8,6 +8,8 @@
 This TYPO3 extension integrates the [clickstorm] SEO Extension into the page layout module of TemplaVoilà! Plus.
 Compatible to TYPO3 v10/v11 LTS.
 
+The [cs_seo](https://extensions.typo3.org/extension/cs_seo) extension extends the SEO features of TYPO3 Core. For example JSON-LD, SERP and focus keywords. It also have a backend information window for editors, which gets integrated into TV+ backend with this extension.
+
 Install this from TER https://extensions.typo3.org/extension/t3voila_tvplus_csseo/
 or clone this repository to typo3conf/ext/t3voila_tvplus_csseo:
 
