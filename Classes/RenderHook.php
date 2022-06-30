@@ -1,5 +1,8 @@
 <?php
-namespace Ppi\PpiTemplavoilaplusCsseo;
+
+declare(strict_types=1);
+
+namespace T3voila\TvplusCsseo;
 
 /**
  *  Copyright notice
@@ -21,31 +24,33 @@ namespace Ppi\PpiTemplavoilaplusCsseo;
  *  This copyright notice MUST APPEAR in all copies of the script!
  */
 
+use Clickstorm\CsSeo\Hook\PageHook;
+use Tvp\TemplaVoilaPlus\Controller\Backend\PageLayoutController;
+use TYPO3\CMS\Backend\Controller\PageLayoutController as CorePageLayoutController;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-
-use Ppi\TemplaVoilaPlus\Controller\BackendLayoutController;
 
 /**
  * Class to add [clickstorm] SEO to the templavoila page module
  * Uses the renderHeaderFunctionHook hook
  *
- * @author Alexander Opitz <opitz@pluspol-interactive.de>
+ * @author Alexander Opitz <opitz.alexander@googlemail.com>
  */
 class RenderHook
 {
-    public function renderHeaderFunctionHook(array $params, BackendLayoutController $parentObject)
+    public function renderHeaderFunctionHook(array $params, PageLayoutController $parentObject): string
     {
-        /** @var TYPO3\CMS\Backend\Controller\PageLayoutController $pageLayoutController */
-        $pageLayout = GeneralUtility::makeInstance(\TYPO3\CMS\Backend\Controller\PageLayoutController::class);
-        $pageLayout->id = $parentObject->id;
-        $pageLayout->current_sys_language = $parentObject->currentLanguageUid;
-        $pageLayout->MOD_SETTINGS['function'] = 1;
-        $pageLayout->modTSconfig = BackendUtility::getModTSconfig($parentObject->id, 'mod.' . 'web_layout');
-        $pageLayout->pageinfo = BackendUtility::readPageAccess($parentObject->id, $parentObject->perms_clause);
+        /** @var CorePageLayoutController $pageLayoutController */
+        $pageLayout = GeneralUtility::makeInstance(CorePageLayoutController::class);
+        $pageLayout->id = $parentObject->getCurrentPageUid();
+        $pageLayout->pageinfo = $parentObject->getCurrentPageInfo();
+        $pageLayout->MOD_SETTINGS = [
+            'function' => 1,
+            'language' => $parentObject->getCurrentPageUid(),
+        ];
 
-        /** @var Clickstorm\CsSeo\Hook\PageHook $csseo */
-        $csseo = GeneralUtility::makeInstance(\Clickstorm\CsSeo\Hook\PageHook::class);
+        /** @var PageHook $csseo */
+        $csseo = GeneralUtility::makeInstance(PageHook::class);
         return $csseo->render($params, $pageLayout);
     }
 }

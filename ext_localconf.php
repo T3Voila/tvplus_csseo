@@ -2,6 +2,6 @@
 defined('TYPO3_MODE') or die();
 
 if (TYPO3_MODE === 'BE') {
-    $TYPO3_CONF_VARS['SC_OPTIONS']['templavoilaplus']['BackendLayout']['renderHeaderFunctionHook'][$_EXTKEY]
-        = \Ppi\PpiTemplavoilaplusCsseo\RenderHook::class . '->renderHeaderFunctionHook';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['templavoilaplus']['PageLayout']['renderHeaderFunctionHook']['t3voila_tvplus_csseo']
+        = \T3voila\TvplusCsseo\RenderHook::class . '->renderHeaderFunctionHook';
 }
