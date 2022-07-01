@@ -51,6 +51,6 @@ class RenderHook
 
         /** @var PageHook $csseo */
         $csseo = GeneralUtility::makeInstance(PageHook::class);
-        return $csseo->render($params, $pageLayout);
+        return $csseo->render($params, $pageLayout) ?? '';
     }
 }
