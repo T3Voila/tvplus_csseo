@@ -46,7 +46,7 @@ class RenderHook
         $pageLayout->pageinfo = $parentObject->getCurrentPageInfo();
         $pageLayout->MOD_SETTINGS = [
             'function' => 1,
-            'language' => $parentObject->getCurrentPageUid(),
+            'language' => $parentObject->getCurrentLanguageUid(),
         ];
 
         /** @var PageHook $csseo */
